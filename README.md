@@ -11,7 +11,7 @@
 ![Languages](https://img.shields.io/badge/languages-English%20%7C%20Portugu%C3%AAs-17201b?style=for-the-badge)
 ![Themes](https://img.shields.io/badge/themes-Light%20%7C%20Dim%20%7C%20Dark-a6e85e?style=for-the-badge)
 
-[Open the studio](https://brunnojob.github.io/source-coppy/) · [Browse the source](https://github.com/brunnojob/source-coppy) · [Support the project](https://donate.stripe.com/6oU8wQg9k9Hb8809CrfQI01)
+[Browse the source](https://github.com/brunnojob/source-coppy) · [Support the project](https://donate.stripe.com/6oU8wQg9k9Hb8809CrfQI01)
 
 </div>
 
@@ -69,7 +69,7 @@ Generated pages use Unsplash photography and Google Fonts, so those external ass
 
 ## GitHub Pages
 
-The repository includes a root-level `index.html` and is ready for GitHub Pages with the **Deploy from a branch** source, selecting `main` and `/(root)`. The project URL is:
+The root-level `index.html` is ready to serve with GitHub Pages. In the repository settings, enable Pages with the **Deploy from a branch** source and select `main` and `/(root)`. After Pages is enabled, the project URL will be:
 
 `https://brunnojob.github.io/source-coppy/`
 
