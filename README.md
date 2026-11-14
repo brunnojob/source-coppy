@@ -1,104 +1,88 @@
 <div align="center">
 
+<img src="logo.svg" width="68" alt="bsystem's logo">
+
 # bsystem's · source-coppy
 
-**Ready-made websites, landing pages and SaaS templates. Copy, paste, ship.**
+**A practical open-source studio for ready-to-use websites, landing pages, and SaaS concepts.**
 
-[![License: MIT](https://img.shields.io/badge/license-MIT-a3e635?style=for-the-badge)](LICENSE)
-![Templates](https://img.shields.io/badge/templates-312+-1f2329?style=for-the-badge)
-![i18n](https://img.shields.io/badge/i18n-EN%20%7C%20PT--BR-a3e635?style=for-the-badge)
-![Themes](https://img.shields.io/badge/themes-light%20%7C%20dim%20%7C%20dark-1f2329?style=for-the-badge)
+[![License: MIT](https://img.shields.io/badge/license-MIT-17201b?style=for-the-badge)](LICENSE)
+![Templates](https://img.shields.io/badge/templates-312-a6e85e?style=for-the-badge)
+![Languages](https://img.shields.io/badge/languages-English%20%7C%20Portugu%C3%AAs-17201b?style=for-the-badge)
+![Themes](https://img.shields.io/badge/themes-Light%20%7C%20Dim%20%7C%20Dark-a6e85e?style=for-the-badge)
 
-[Features](#-features) · [Catalog](#-catalog) · [Quick start](#-quick-start) · [Contributing](#-contributing)
+[Open the studio](https://brunnojob.github.io/source-coppy/) · [Browse the source](https://github.com/brunnojob/source-coppy) · [Support the project](https://donate.stripe.com/6oU8wQg9k9Hb8809CrfQI01)
 
 </div>
 
 ---
 
-## ✨ Features
+## About
 
-| | |
-|---|---|
-| 🧱 **312+ templates** | 104 websites, 104 landing pages, 104 SaaS — 78 niches × 4 styles |
-| 🎨 **4 visual styles** | Minimal · Bold · Elegant · Neon |
-| 🌗 **3 themes** | Light (default), Dim (soft dark) and Dark (strong) |
-| 🌐 **Bilingual** | The whole platform *and* every exported template in English or Brazilian Portuguese |
-| 📋 **Copy or download** | One click to copy a standalone HTML file — no build step needed |
-| 🆓 **Open source** | MIT licensed, forever free |
+bsystem's is a free, open-source starting point for people building a web presence or a software product. Explore a catalog of 312 complete page concepts, see each one in a full-page preview, then copy or download its generated HTML.
 
-## 📚 Catalog
+The catalog contains **104 website templates, 104 landing pages, and 104 SaaS pages**. Each direction combines 13 use cases with 8 distinct art directions. The variations change the layout, typography, color, photography, page copy, and presentation.
 
-<details>
-<summary><b>🏪 Websites (26 niches)</b> — click to expand</summary>
+## Features
 
-Barbershop · Restaurant · Dental clinic · Gym · Bakery · Law firm · Real estate · Pet shop · Beauty salon · Coffee shop · Photographer · Church · School · Auto repair · Hotel · Architecture studio · Accounting · Tattoo studio · Pizzeria · Veterinary · Yoga studio · Florist · Construction · Psychologist · Nutritionist · Travel agency
-</details>
+- **312 ready-to-preview page concepts** across three project directions.
+- **Full-page previews** with responsive layouts, navigation, service or feature sections, plans, testimonials, and contact calls to action.
+- **Standalone HTML export** for each selected template, with copy and download actions.
+- **English and Brazilian Portuguese** controls for the studio and generated pages.
+- **Three interface themes:** Light by default, Dim, and Dark.
+- **Real photography** selected to match each use case.
+- **Search and filters** for project direction and visual style.
+- **Stripe donation panel** with an external secure checkout fallback.
+- **No build step or framework required** to run the studio.
 
-<details>
-<summary><b>🚀 Landing pages (26 niches)</b> — click to expand</summary>
+## Catalog
 
-E-book launch · Online course · Mobile app · Event · Webinar · Waitlist · Podcast · Digital agency · Coaching · Product launch · Newsletter · Mentorship · Freelancer · Nonprofit · Crypto project · Video game · Music album · Fitness program · Property launch · Insurance · Solar energy · Wedding · Store promo · Consulting · Hiring page · Fundraising
-</details>
+| Direction | Templates | Example use cases |
+|---|---:|---|
+| Websites | 104 | Barbershop, neighborhood café, dental studio, gym, bakery, law office, hotel, pet clinic, salon, architecture, tattoo studio, florist, photography |
+| Landing pages | 104 | Course launch, product release, retreat, event, app waitlist, podcast, fundraising, agency, wedding, property, newsletter, fitness program, music release |
+| SaaS | 104 | Customer platform, analytics, invoicing, help desk, scheduling, people operations, inventory, project management, email campaigns, point of sale, learning, clinic, AI writing |
 
-<details>
-<summary><b>📊 SaaS (26 niches)</b> — click to expand</summary>
+Each use case has eight visual directions: **Fresh, Studio, Signal, Noir, Coastal, Form, Terra, and Mono**. The interface translates their labels for Portuguese.
 
-CRM · Analytics · Invoicing · Help desk · Scheduling · HR platform · Inventory · Project management · Email marketing · Point of sale · Learning platform · Fleet tracking · Clinic management · AI writer · Personal finance · Form builder · Chatbot · Uptime monitoring · Booking engine · Social scheduler · Contract manager · Restaurant OS · Gym management · Real estate CRM · Delivery platform · OKRs & goals
-</details>
+## Run locally
 
-<details>
-<summary><b>🎨 Styles</b></summary>
-
-| Style | Vibe | Font |
-|---|---|---|
-| Minimal | Clean, airy, soft niche color | Figtree |
-| Bold | Saturated background, hard edges | Bricolage Grotesque |
-| Elegant | Warm neutrals, pill buttons | Fraunces |
-| Neon | Dark canvas, glowing accent | JetBrains Mono |
-</details>
-
-## ⚡ Quick start
+This is a static site. Open `index.html` in a browser, or serve the repository directory with any static file server:
 
 ```bash
-git clone https://github.com/brunnojob/source-coppy.git
-cd source-coppy
-bun install
-bun run dev
+python -m http.server 8000
 ```
 
-<details>
-<summary><b>🧭 How to use a template</b></summary>
+Then visit `http://localhost:8000`.
 
-1. Open the platform and pick a category (Websites, Landing pages, SaaS).
-2. Search a niche — e.g. `barbershop` / `barbearia`.
-3. Open a template, switch **EN / PT-BR** to choose the content language.
-4. Click **Copy HTML** or **Download .html** and drop it on any static host.
-</details>
+No package installation, environment variables, account, or build command is needed.
 
-<details>
-<summary><b>🛠 Tech stack</b></summary>
+## Use a template
 
-- React 19 + TanStack Start / Router
-- Tailwind CSS v4 with `oklch` design tokens
-- Vite 7 · TypeScript · Vitest
-</details>
+1. Open the studio and select Websites, Landing pages, or SaaS.
+2. Search by use case or filter by visual direction.
+3. Open **Preview page** to inspect the complete responsive page.
+4. Choose **Copy HTML** or **Download HTML**.
+5. Replace the example copy, contact details, and links with your own.
 
-<details>
-<summary><b>➕ Adding a new niche</b></summary>
+Generated pages use Unsplash photography and Google Fonts, so those external assets need an internet connection. The rest of each generated page is included in its HTML file.
 
-Edit `src/lib/templates.ts` and add an entry to `NICHES`:
+## GitHub Pages
 
-```ts
-n("sushi", "Sushi bar", "Restaurante japonês", 15),
-```
+The repository includes a root-level `index.html` and is ready for GitHub Pages with the **Deploy from a branch** source, selecting `main` and `/(root)`. The project URL is:
 
-Each niche automatically gets all 4 styles in both languages.
-</details>
+`https://brunnojob.github.io/source-coppy/`
 
-## 🤝 Contributing
+## Donate
 
-Pull requests are welcome! Open an issue to suggest new niches, styles or languages.
+The studio includes an embedded Stripe donation page and a direct checkout link. Contributions of any amount help support more tools and templates.
 
-## 📄 License
+[Contribute through Stripe](https://donate.stripe.com/6oU8wQg9k9Hb8809CrfQI01)
 
-[MIT](LICENSE) © bsystem's
+## Contributing
+
+Suggestions and pull requests are welcome. Open an issue with the use case, language, or visual direction you would like to see improved.
+
+## License
+
+This project is released under the [MIT License](LICENSE).
