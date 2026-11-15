@@ -1,0 +1,13 @@
+(function(root){'use strict';
+let memoryBase='',memoryToken='';
+function normalizeBase(value){const u=new URL(value);if(u.username||u.password||u.search||u.hash||!(u.protocol==='https:'||u.protocol==='http:'&&['localhost','127.0.0.1','[::1]'].includes(u.hostname)))throw Error('https_required');return u.href.replace(/\/$/,'')}
+function base(){try{return localStorage.getItem('bs-api-url')||memoryBase}catch{return memoryBase}}
+function token(){try{const saved=JSON.parse(sessionStorage.getItem('bs-api-session')||'null');return saved?.base===base()?saved.token:memoryToken}catch{return memoryToken}}
+function setBase(value){const next=normalizeBase(value);if(next!==base())clear();memoryBase=next;try{localStorage.setItem('bs-api-url',next)}catch{}return next}
+function setToken(value){memoryToken=value;try{sessionStorage.setItem('bs-api-session',JSON.stringify({base:base(),token:value}))}catch{}}
+function clear(){memoryToken='';try{sessionStorage.removeItem('bs-api-session')}catch{}}
+async function request(path,options={}){const endpoint=base();if(!endpoint)throw Object.assign(Error('backend_not_configured'),{code:'backend_not_configured'});const controller=new AbortController(),timeout=setTimeout(()=>controller.abort(),20000);try{const response=await fetch(endpoint+path,{method:options.method||'GET',headers:{'Content-Type':'application/json',...(token()?{Authorization:'Bearer '+token()}:{})},body:options.body===undefined?undefined:JSON.stringify(options.body),signal:controller.signal,credentials:'omit',cache:'no-store'});let result;try{result=await response.json()}catch{throw Object.assign(Error('invalid_server_response'),{code:'invalid_server_response'})}if(!response.ok){if(response.status===401&&!path.startsWith('/auth/login'))clear();throw Object.assign(Error(typeof result.detail==='string'?result.detail:'invalid_input'),{code:typeof result.detail==='string'?result.detail:'invalid_input',status:response.status})}return result}finally{clearTimeout(timeout)}}
+function moneyToCents(value){const s=String(value).trim().replace(',','.');if(!/^\d{1,8}(\.\d{1,2})?$/.test(s))throw Error('invalid_amount');const [whole,fraction='']=s.split('.');return Number(whole)*100+Number(fraction.padEnd(2,'0'))}
+function csv(rows){return rows.map(row=>row.map(value=>{let s=String(value??'');if(/^[\s]*[=+\-@]/.test(s))s="'"+s;return '"'+s.replace(/"/g,'""')+'"'}).join(',')).join('\r\n')}
+const api={normalizeBase,base,token,setBase,setToken,clear,request,moneyToCents,csv};root.BSApi=api;if(typeof module!=='undefined')module.exports=api;
+})(typeof globalThis!=='undefined'?globalThis:this);

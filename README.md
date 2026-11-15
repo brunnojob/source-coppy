@@ -4,55 +4,75 @@
 
 # bsystem's · source-coppy
 
-**Choose a starting point. Make it yours. Publish it for free.**
+**Design your website. Connect your business. Own your data.**
 
 [![Templates](https://img.shields.io/badge/templates-376-a6e85e?style=for-the-badge)](#catalog)
 [![MIT](https://img.shields.io/badge/license-MIT-17201b?style=for-the-badge)](LICENSE)
-[![Pages](https://img.shields.io/badge/live-GitHub_Pages-17201b?style=for-the-badge)](https://brunnojob.github.io/source-coppy/)
+[![Pages](https://img.shields.io/badge/frontend-GitHub_Pages-17201b?style=for-the-badge)](https://brunnojob.github.io/source-coppy/)
 [![Validate and deploy Pages](https://github.com/brunnojob/source-coppy/actions/workflows/pages.yml/badge.svg)](https://github.com/brunnojob/source-coppy/actions/workflows/pages.yml)
 
-[**Open the free studio →**](https://brunnojob.github.io/source-coppy/) · [Donate](https://donate.stripe.com/6oU8wQg9k9Hb8809CrfQI01) · [Request a template](https://github.com/brunnojob/source-coppy/issues/new)
+[**Open the website studio →**](https://brunnojob.github.io/source-coppy/) · [**Business management →**](https://brunnojob.github.io/source-coppy/operations.html) · [Self-hosting guide](docs/SELF_HOSTING.md) · [Donate](https://donate.stripe.com/6oU8wQg9k9Hb8809CrfQI01)
 
 </div>
 
-[![Live template catalog](docs/studio-preview.jpg)](https://brunnojob.github.io/source-coppy/)
+[![Template catalog](docs/studio-preview.jpg)](https://brunnojob.github.io/source-coppy/)
 
-## Build without starting from a blank page
+## A free studio with room to grow
 
-An open-source visual website studio inspired by the freedom of tools like WordPress, delivered as a lightweight static application. Browse **376 ready-to-use templates**, inspect the actual page in a live preview, customize its content, and download standalone HTML. No subscription, account, API key, framework installation, or paid hosting is required.
+An open-source visual website editor with **376 templates**, editable multi-page projects, portable exports, and a self-hosted business API. The editor runs on GitHub Pages without a backend. Connect your own server when you need team accounts, shared records, checkout operations, inventory and cash-register reconciliation.
 
-**This is a static site builder, not a full WordPress CMS replacement.** GitHub Pages serves the studio and your exported sites. Server-side accounts, multi-user databases, payment processing, email delivery, and fiscal invoicing require your own integrations.
+No subscription, API key or cloud account is required for the website editor. The business API runs on your own Python/Docker server; hosting, TLS, backups and any external payment integrations remain your responsibility. **No business backend is provisioned automatically.**
+
+## Website editor
+
+- **Actual previews:** catalog cards render template HTML. Desktop, tablet and mobile previews use the same page engine as exports.
+- **Multi-page sites:** add, duplicate, rename and remove pages; choose a different template for each page; edit filenames; navigate between pages inside the preview.
+- **Image editing:** replace cover photos with HTTPS URLs or upload PNG/JPEG/WebP files up to 5 MB. Uploaded images are resized to a maximum dimension of 1600 pixels, encoded as WebP and embedded into exported pages. Edit alt text and vertical crop position.
+- **Block organization:** drag blocks or use keyboard-accessible up/down buttons. Add text, gallery, call-to-action and built-in sections; edit block headings/text; hide, duplicate or remove blocks. The functional business block cannot be duplicated because it owns interactive element IDs.
+- **Appearance:** brand, headline, description, accent color, contact email, button copy, typography and SEO title.
+- **Project storage:** auto-save on this device using IndexedDB; open saved projects from My projects. Download/import project JSON for a portable editable backup.
+- **Team project storage:** explicitly save/load private project documents through your server after signing in on the Business page. Version checks prevent overwriting a newer server copy.
+- **Exports:** copy/download the current HTML, or download a ZIP containing every page, working navigation, project JSON and the business-management frontend.
+- **PT-BR / EN:** controls and template defaults follow the selected language. Your custom text stays exactly as written; it is not automatically translated.
+- **Light / Dim / Dark:** studio themes and language preferences persist locally.
+
+Projects support up to 30 pages, 40 blocks per page and 12 images per gallery. Imported project files are limited to 20 MB and validated against the catalog. JSON is editable project data, not arbitrary executable HTML. New text/gallery blocks accept plain text and safe image URLs.
 
 ## Catalog
 
-| Direction | Templates | Included use cases |
+| Direction | Templates | Use cases |
 |---|---:|---|
-| Websites | 104 | Barbershop, café, dental clinic, gym, bakery, law office, hotel, veterinary clinic, salon, architecture, tattoo studio, florist, photography |
+| Websites | 104 | Barbershop, café, dental clinic, gym, bakery, law office, hotel, veterinarian, salon, architecture, tattoo studio, florist, photography |
 | Landing pages | 104 | Course, product, retreat, event, app waitlist, podcast, fundraising, creative agency, wedding, property, newsletter, fitness, music |
-| SaaS starters | 104 | CRM, analytics, invoicing, help desk, scheduling, people operations, inventory, projects, email campaigns, retail, learning, clinic, writing |
+| SaaS starters | 104 | CRM, analytics, invoicing, help desk, scheduling, people operations, inventory, projects, campaigns, retail, learning, clinic, writing |
 | Point of sale | 64 | Barbershop, café, fashion, bakery, pet shop, salon, florist, bookstore |
-| **Total** | **376** | **47 use cases × 8 visual directions** |
+| **Total** | **376** | **47 use cases × 8 layout systems** |
 
-These are reusable combinations of niche-specific content and **eight different layout systems**, not 376 independently hand-coded applications. Fresh uses a split hero; Studio an editorial portrait; Signal a poster and ticker; Noir a cinematic image; Coastal a centered composition; Form a mosaic; Terra an organic portrait; Mono a typographic index. Layouts also change section order, typography, spacing, borders, and colors. Every combination has a unique ID and complete preview in both supported languages.
+The catalog combines niche-specific content with **Fresh, Studio, Signal, Noir, Coastal, Form, Terra and Mono**. Layouts differ in hero composition, section order, typography, shapes and colors. These are 376 editable combinations, not 376 independently developed business systems.
 
-## What you can do
+## Business operations on your server
 
-- **See the actual page:** catalog thumbnails render the template HTML instead of showing an unrelated stock photo.
-- **Customize without coding:** change brand, headline, description, accent color, contact email, and button text. Hide the plans section when it does not fit.
-- **Check responsive layouts:** desktop, tablet, and mobile preview sizes.
-- **Keep your work:** save separate browser-local drafts by template and language; copy or download the exact customized HTML shown in the preview.
-- **Share a starting point:** preview URLs include the template ID, for example [barbershop Fresh](https://brunnojob.github.io/source-coppy/#template=websites-001). Private draft content is not included in that link.
-- **Use English or Brazilian Portuguese:** studio controls and generated pages follow the selected language.
-- **Choose your environment:** Light by default, Dim, or Dark. Theme and language preferences persist locally.
-- **Use free utilities:** text/word counter, color contrast checker, and URL slug generator.
+The separate **Business** application connects to a Python/FastAPI API with a persistent SQLite database. It includes:
 
-### Interactive starters
+| Area | Implemented behavior |
+|---|---|
+| Accounts | Owner, manager, cashier and member permissions; hashed passwords; expiring sessions; logout and revocation |
+| Team | Single-use invitations; activation/deactivation; owner protection |
+| CRM | Customers, contact details, notes and archival |
+| Work | Shared tasks, assignments, due dates and workflow stages |
+| Inventory | Products, SKU, integer-cent prices, tracked/untracked items, adjustments and stock ledger |
+| Sales | Server-controlled totals, discounts restricted to managers, atomic stock reduction and idempotent retry |
+| Returns | Full return once per sale, tracked-stock restoration and refund ledger |
+| Cash | Per-operator opening/closing, counted/expected cash and discrepancy |
+| Reports | Daily UTC sales, return totals, net recorded sales, low stock, recent history, CSV export and audit |
+| Projects | Private business-scoped website projects with optimistic version checks |
+| Recovery | Consistent SQLite backups and local password recovery commands |
 
-**POS exports** include a niche-specific example product catalog, quantity controls, removable cart items, total calculation, sale recording, and a plain-text receipt. Exported pages store sales in that browser when storage is available. These are local starters; there is no payment processor, fiscal receipt, stock synchronization, or production accounting system.
+The template previews keep their small local demonstration modules; use **Open server-connected management** in SaaS/POS exports for the authenticated business frontend. Uploaded/generated pages do not contain server credentials.
 
-**SaaS exports** include a working local task board with add, complete, remove, and progress counters. The page content is specific to the selected product niche; the board is a shared starter interaction, not a finished CRM, clinic system, AI service, or invoicing backend. Charts are explicitly labeled as example activity.
+Card/Pix selections **record an externally received payment**. They do not charge a card, confirm Pix settlement, or issue monetary refunds. Receipts have no fiscal value. NF-e/NFC-e, accounting/tax integrations, payment-provider APIs, medical records, payroll, campaign delivery and AI model services are not included. The shared business application implements common operations rather than every domain-specific feature suggested by the SaaS marketing templates.
 
-Previews run in sandboxed frames without same-origin access. Local storage can be unavailable inside the preview; export the HTML to persist board data and POS records on your own origin. The studio itself saves only drafts and preferences to browser storage. Browser storage is not a backup or suitable for confidential business records.
+For installation, roles, first-owner creation, HTTPS, backups, recovery and deployment limits, read **[Self-hosting](docs/SELF_HOSTING.md)**.
 
 ## Start locally
 
@@ -62,41 +82,64 @@ cd source-coppy
 python -m http.server 8000
 ```
 
-Open `http://localhost:8000`. There is no build step. For catalog validation with Node.js 22 or later:
+Open `http://localhost:8000`. The website editor has no build step and no runtime npm dependencies.
+
+For the business API (Python 3.12):
 
 ```bash
-node --test tests/catalog.test.cjs
+pip install -r server/requirements.txt
+python -m server.manage bootstrap --business "Your business" --email "you@example.com" --name "Owner"
+uvicorn server.app:app --host 127.0.0.1 --port 9000
 ```
 
-Tests generate all **752 language variants**, check IDs, document completeness, distinct layouts and section orders, generated-script syntax, escaping, export options, and interactive module inclusion.
+Open `http://localhost:8000/operations.html`, set `http://localhost:9000` as the server URL, and sign in. The bootstrap command prompts privately for the owner's password. Docker Compose is also included.
 
-## Publish with GitHub Pages
+## Validate
 
-The repository includes `.github/workflows/pages.yml`. It validates the catalog, uploads only public studio files, and deploys on pushes to `main`. Configure **Settings → Pages → Source → GitHub Actions** once. Pull requests run validation without publishing.
+```bash
+npm ci
+npm test
+pip install -r server/requirements-test.txt
+python -m unittest discover -s tests -p 'test_*.py' -v
+```
 
-To publish an exported page:
+Frontend tests cover all 752 template/language combinations, project import validation, page links, reordering, gallery/image settings, save/restore, undo/redo, interoperable ZIP export, integer money parsing, CSV safety, role-specific UI and retrying the exact same pending sale. Backend tests use disposable databases to verify isolation, permissions, sessions, invitations, concurrent sales, idempotency, returns, reconciliation, optimistic edits and backup recovery.
 
-1. Download your customized HTML.
-2. Rename it to `index.html` and upload it to a repository you own.
-3. In that repository, select **Settings → Pages → Deploy from a branch → main → /(root)**.
-4. Open the Pages URL shown by GitHub.
+## Publish a website
 
-The generated page includes its CSS and any local starter JavaScript. Photography is loaded from Unsplash and requires an internet connection; fonts in exported pages use system fallbacks. The studio uses Google Fonts. Review external asset terms and replace photos or example copy as appropriate for your project.
+1. Open a template and customize its pages, images and blocks.
+2. Download **site ZIP** and extract it.
+3. Upload its files to your repository, keeping the folders and `index.html` at the root.
+4. Enable **Settings → Pages → Deploy from a branch → main → /(root)**.
+
+Uploaded images are embedded into HTML; remote image URLs still require network access. The main studio loads Google Fonts and original photography from external providers. Check external asset terms before commercial use.
+
+This repository's `.github/workflows/pages.yml` runs frontend/backend tests and deploys only public HTML, JS, CSS and branding files on pushes to `main`. It never uploads the API, database or server configuration to Pages. Pull requests validate without deployment.
 
 ## Donate
 
 **Contribua com qualquer valor e tenha acesso a mais ferramentas.**
 
-**Contribute any amount and get access to more tools.**
+[Contribute any amount through Stripe →](https://donate.stripe.com/6oU8wQg9k9Hb8809CrfQI01)
 
-[Support bsystem's through Stripe →](https://donate.stripe.com/6oU8wQg9k9Hb8809CrfQI01)
+All templates and current utilities remain free and MIT-licensed. Donations support ongoing development. The panel's direct Stripe link is the reliable payment route. Stripe blocks a hosted Payment Link checkout inside a generic iframe; an official Stripe Buy Button embed requires the button code generated for that link, and is not the same as an embedded full payment form. This static project does not verify donation payments or unlock paid accounts.
 
-The donation panel includes the requested Stripe embed and a direct secure checkout link. Stripe or browser policies may prevent checkout from displaying inside an iframe; the direct link remains available. All current templates and utilities remain free and open source. Donations support development; the static studio does not verify purchases or unlock paid accounts.
+## Project structure
+
+| Path | Purpose |
+|---|---|
+| `index.html`, `css/editor.css` | Catalog and editor shell |
+| `js/catalog.js`, `js/templates.js` | Catalog data and page renderer |
+| `js/project.js`, `js/editor.js` | Project document, validation, ZIP, editor and local persistence |
+| `operations.html`, `js/business.js` | Business-management frontend |
+| `js/api.js` | Server connection and exact money/CSV helpers |
+| `server/` | Authenticated API, schema and local operator commands |
+| `tests/` | Frontend and backend verification |
 
 ## Contribute
 
-Open an issue with a use case, accessibility concern, translation fix, or layout idea. Catalog data lives in `js/catalog.js`, the rendering engine in `js/templates.js`, and editor behavior in `js/studio.js`. Add bilingual content, keep generated pages responsive, and run the catalog tests before submitting a pull request.
+Open an issue with a use case, layout, translation, accessibility concern or workflow improvement. Keep content bilingual, preserve export compatibility, and run the tests before submitting a pull request.
 
 ## License
 
-[MIT](LICENSE). External photos and fonts retain their respective terms.
+[MIT](LICENSE). External assets retain their respective licenses.

@@ -17,7 +17,13 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: '22'
-      - run: node --test tests/catalog.test.cjs
+      - run: npm ci --ignore-scripts
+      - run: npm test
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: pip install -r server/requirements-test.txt
+      - run: python -m unittest discover -s tests -p 'test_*.py' -v
   deploy:
     if: github.event_name != 'pull_request'
     needs: validate
@@ -34,8 +40,8 @@ jobs:
       - name: Prepare public files
         run: |
           mkdir _site
-          cp index.html favicon.svg logo.svg LICENSE _site/
-          cp -r js _site/
+          cp index.html operations.html favicon.svg logo.svg LICENSE _site/
+          cp -r js css _site/
           touch _site/.nojekyll
       - uses: actions/upload-pages-artifact@v3
         with:
