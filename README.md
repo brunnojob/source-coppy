@@ -15,6 +15,8 @@
 
 </div>
 
+[![Live template catalog](docs/studio-preview.jpg)](https://brunnojob.github.io/source-coppy/)
+
 ## Build without starting from a blank page
 
 An open-source visual website studio inspired by the freedom of tools like WordPress, delivered as a lightweight static application. Browse **376 ready-to-use templates**, inspect the actual page in a live preview, customize its content, and download standalone HTML. No subscription, account, API key, framework installation, or paid hosting is required.
