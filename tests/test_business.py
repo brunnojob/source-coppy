@@ -32,6 +32,12 @@ class BusinessTests(unittest.TestCase):
         headers={'Authorization':'Bearer '+r.json()['token']};self.assertEqual(self.client.get('/me',headers=headers).status_code,200)
         self.client.post('/auth/logout',headers=headers);self.assertEqual(self.client.get('/me',headers=headers).status_code,401)
         self.assertEqual(self.client.get('/products').status_code,401)
+    def test_passwords_are_not_silently_trimmed(self):
+        password='  Exact-Password-123!  '
+        with api.transaction() as db:
+            db.execute('UPDATE users SET password_hash=? WHERE id=?',(api.password_hash(password),self.owner['id']))
+        self.assertEqual(self.client.post('/auth/login',json={'email':self.owner['email'],'password':password}).status_code,200)
+        self.assertEqual(self.client.post('/auth/login',json={'email':self.owner['email'],'password':password.strip()}).status_code,401)
     def test_failed_login_rate_limit_persists(self):
         for _ in range(10):self.assertEqual(self.client.post('/auth/login',json={'email':self.owner['email'],'password':'wrong'}).status_code,401)
         self.assertEqual(self.client.post('/auth/login',json={'email':self.owner['email'],'password':'wrong'}).status_code,429)

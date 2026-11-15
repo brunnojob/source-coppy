@@ -15,7 +15,7 @@
 
 </div>
 
-[![Template catalog](docs/studio-preview.jpg)](https://brunnojob.github.io/source-coppy/)
+[![Multi-page visual editor](docs/editor-preview.jpg)](https://brunnojob.github.io/source-coppy/)
 
 ## A free studio with room to grow
 
@@ -32,7 +32,7 @@ No subscription, API key or cloud account is required for the website editor. Th
 - **Appearance:** brand, headline, description, accent color, contact email, button copy, typography and SEO title.
 - **Project storage:** auto-save on this device using IndexedDB; open saved projects from My projects. Download/import project JSON for a portable editable backup.
 - **Team project storage:** explicitly save/load private project documents through your server after signing in on the Business page. Version checks prevent overwriting a newer server copy.
-- **Exports:** copy/download the current HTML, or download a ZIP containing every page, working navigation, project JSON and the business-management frontend.
+- **Exports:** copy/download the current HTML, or download a ZIP containing every page, working navigation and the business-management frontend. Editable project JSON is exported separately, so hidden block text is not accidentally published.
 - **PT-BR / EN:** controls and template defaults follow the selected language. Your custom text stays exactly as written; it is not automatically translated.
 - **Light / Dim / Dark:** studio themes and language preferences persist locally.
 

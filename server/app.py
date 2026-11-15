@@ -14,7 +14,7 @@ from typing import Annotated, Literal
 
 from fastapi import Depends, FastAPI, Header, HTTPException, Request
 from fastapi.middleware.cors import CORSMiddleware
-from pydantic import BaseModel, ConfigDict, Field, field_validator
+from pydantic import BaseModel, ConfigDict, Field, StringConstraints, field_validator
 
 DB_PATH = Path(os.getenv('BS_DATABASE', str(Path(__file__).parent / 'data' / 'business.sqlite3')))
 SESSION_TTL = 8 * 3600
@@ -139,9 +139,11 @@ def startup():
 class StrictModel(BaseModel):
     model_config = ConfigDict(extra='forbid', str_strip_whitespace=True)
 
+RawPassword = Annotated[str, StringConstraints(strip_whitespace=False)]
+
 class Credentials(StrictModel):
     email: str = Field(min_length=3, max_length=254)
-    password: str = Field(min_length=1, max_length=128)
+    password: RawPassword = Field(min_length=1, max_length=128)
 
 class Invite(StrictModel):
     email: str = Field(min_length=3, max_length=254)
@@ -156,11 +158,11 @@ class Invite(StrictModel):
 
 class AcceptInvite(StrictModel):
     token: str = Field(min_length=20, max_length=200)
-    password: str = Field(min_length=12, max_length=128)
+    password: RawPassword = Field(min_length=12, max_length=128)
 
 class PasswordChange(StrictModel):
-    old_password: str = Field(min_length=1, max_length=128)
-    new_password: str = Field(min_length=12, max_length=128)
+    old_password: RawPassword = Field(min_length=1, max_length=128)
+    new_password: RawPassword = Field(min_length=12, max_length=128)
 
 class Product(StrictModel):
     sku: str = Field(min_length=1, max_length=60)
