@@ -11,7 +11,7 @@
 [![Pages](https://img.shields.io/badge/frontend-GitHub_Pages-17201b?style=for-the-badge)](https://brunnojob.github.io/source-coppy/)
 [![Validate and deploy Pages](https://github.com/brunnojob/source-coppy/actions/workflows/pages.yml/badge.svg)](https://github.com/brunnojob/source-coppy/actions/workflows/pages.yml)
 
-[**Open the website studio →**](https://brunnojob.github.io/source-coppy/) · [**Business management →**](https://brunnojob.github.io/source-coppy/operations.html) · [Self-hosting guide](docs/SELF_HOSTING.md) · [Donate](https://donate.stripe.com/6oU8wQg9k9Hb8809CrfQI01)
+[**Open the website studio →**](https://brunnojob.github.io/source-coppy/) · [**Business management →**](https://brunnojob.github.io/source-coppy/operations.html) · [Self-hosting guide](docs/SELF_HOSTING.md) · [Donate](https://mpago.la/1iN25Xz)
 
 </div>
 
@@ -120,9 +120,9 @@ This repository's `.github/workflows/pages.yml` runs frontend/backend tests and 
 
 **Contribua com qualquer valor e tenha acesso a mais ferramentas.**
 
-[Contribute any amount through Stripe →](https://donate.stripe.com/6oU8wQg9k9Hb8809CrfQI01)
 
-All templates and current utilities remain free and MIT-licensed. Donations support ongoing development. The panel's direct Stripe link is the reliable payment route. Stripe blocks a hosted Payment Link checkout inside a generic iframe; an official Stripe Buy Button embed requires the button code generated for that link, and is not the same as an embedded full payment form. This static project does not verify donation payments or unlock paid accounts.
+
+
 
 ## Project structure
 
@@ -143,3 +143,7 @@ Open an issue with a use case, layout, translation, accessibility concern or wor
 ## License
 
 [MIT](LICENSE). External assets retain their respective licenses.
+
+## Criação sob encomenda
+
+Site + landing page + divulgação por **R$ 250**. O link de pagamento é [Mercado Pago](https://mpago.la/1iN25Xz). A confirmação e o aviso por e-mail para contato@brunnodev.store devem ser configurados na conta Mercado Pago; o GitHub Pages não recebe eventos de pagamento. O cliente é contatado após a confirmação manual. Os exemplos de templates podem ser exportados gratuitamente conforme a licença MIT.
