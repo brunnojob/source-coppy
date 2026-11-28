@@ -7,3 +7,13 @@ test('custom text is escaped and unsafe URLs/colors cannot enter exported markup
 test('POS and SaaS exports include their actual local functionality, thumbnails omit scripts',()=>{assert.match(run('templateHTML(templates.at(-1))'),/Registrar venda/);assert.match(run('templateHTML(templates.at(-1))'),/localStorage.setItem/);assert.match(run('templateHTML(templates[208])'),/entryForm/);assert.ok(!run('templateHTML(templates.at(-1),{},"en",false)').includes('<script>'))});
 
 test('interactive preview permits form handlers while isolating the parent origin',()=>{const page=fs.readFileSync('index.html','utf8');assert.match(page,/sandbox="allow-scripts allow-forms allow-popups allow-popups-to-escape-sandbox" id="previewFrame"/);assert.ok(!page.includes('allow-same-origin'))});
+test('modelos brasileiros apresentam composição por coleção, nicho e estilo',()=>{
+ const htmls=run('templates.map(x=>templateHTML(x,{},"pt",false))');
+ const design=htmls.map(h=>{const body=h.match(/<body[^>]+>/)[0];return [body.match(/data-category="([^"]+)"/)[1],body.match(/data-silhouette="([^"]+)"/)[1],body.match(/data-layout="([^"]+)"/)[1]].join(':')});
+ assert.equal(new Set(design).size,376);
+ assert.ok(htmls.every(h=>h.includes('lang="pt-BR"')));
+ const page=fs.readFileSync('index.html','utf8');
+ assert.match(page,/Editor gratuito, sem cadastro/);
+ assert.match(page,/https:\/\/mpago\.la\/1iN25Xz/);
+ assert.doesNotMatch(page,/donate\.stripe|buymeacoffee/i);
+});
